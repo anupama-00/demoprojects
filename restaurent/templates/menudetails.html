@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mb-5">Menu Items</h2>
+<table class="table table-bordered table-danger w-25 mx-auto">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Veg</th>
+        <th>Update</th>
+    </tr>
+    {% for i in menu.menuitem.all %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.is_vegetarian}}</td>
+        <td><a href="{% url 'menuupdate' i.id %}" class="btn btn-danger">Update</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

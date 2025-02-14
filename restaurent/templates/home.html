@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center mb-5 mt-2 mb-3">Welcome to Restaurent</h1>
+<h1 class="text-center mb-5 mt-2">Menu</h1>
+<div class="container w-25 bg-success text-light border border-dark border-5 p-5">
+
+    <h1>
+        <ol>
+              {% for i in m %}
+            <li>
+    <a href="{% url 'menudetails' i.id  %}" class="text-white btn btn-danger">{{i.name}}</a>
+            </li>
+            {% endfor %}
+            </ol>
+</h1>
+
+    </div>
+
+{% endblock %}
